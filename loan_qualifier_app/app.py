@@ -110,7 +110,7 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # set header values
-    header = []
+    header = ['Lender', 'Max Loan Amount', 'Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate']
     # ask user if they want to save the results if they exist ig not notify user and exit
     if len(qualifying_loans) > 0:
         save_result = questionary.confirm("Would you like to save the results to a csv file?").ask()
