@@ -8,6 +8,7 @@ Example:
 """
 import sys
 import fire
+import csv
 import questionary
 from pathlib import Path
 
@@ -116,16 +117,17 @@ def save_qualifying_loans(qualifying_loans):
 
         if save_result:
          # then ask user the location that they want to save the file
-            save_path = questionary.text("Please specify the file path to save your results?").ask()
-     
+            save_path = questionary.text("Please specify the relative file path to save the file.").ask()
+            
             # check if file path exists
-            if save_path.exists():
-                save_path = Path(save_path'/qualifing_loans.csv')
+            if Path(save_path).is_dir():
+                file_name = questionary.text("Please specify what you would like to name this file.").ask()
+                save_path = Path(save_path, file_name+'.csv')
                 with open(save_path, 'w', newline ='') as csvfile:
                     csvwriter = csv.writer(csvfile)
                     csvwriter.writerow(header)
-                    for loan in qualifing_loans:
-                        csvwriter.writerow(loan.values())
+                    for loan in qualifying_loans:
+                        csvwriter.writerow(loan)
             else:
                 print(f"Oops! Can't find this path: {save_path}")
 
