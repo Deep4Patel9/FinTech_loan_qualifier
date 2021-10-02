@@ -108,8 +108,32 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+    # set header values
+    header = []
+    # ask user if they want to save the results if they exist ig not notify user and exit
+    if len(qualifying_loans) > 0:
+        save_result = questionary.confirm("Would you like to save the results to a csv file?").ask()
+
+        if save_result:
+         # then ask user the location that they want to save the file
+            save_path = questionary.text("Please specify the file path to save your results?").ask()
+     
+            # check if file path exists
+            if save_path.exists():
+                save_path = Path(save_path'/qualifing_loans.csv')
+                with open(save_path, 'w', newline ='') as csvfile:
+                    csvwriter = csv.writer(csvfile)
+                    csvwriter.writerow(header)
+                    for loan in qualifing_loans:
+                        csvwriter.writerow(loan.values())
+            else:
+                print(f"Oops! Can't find this path: {save_path}")
+
+        else:
+            print("You have chosen not to save the results.")
+
+    else:
+        print("No qualifying loans exist.")
 
 
 def run():
