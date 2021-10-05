@@ -3,9 +3,9 @@
 This is a Python CLI(command-line interface) Application that allows the user to see the loan they qualify for from lenders without all the manual calculations and filtering. This application works by taking in a .csv file(an example is in the 'data' folder named 'daily_rate_sheet.csv') of loan criteria for various loan providers. You will be asked a number of questions through the command line to evaluate your eligibiliy for the given loans. Then an output will be provided for the number of loans that you are eligle for along with a prompt asking you if you want to save the information as a file, the path that you want to save to, and the name that you want to save the file as.
 
 
-*Note: If you decide to create a more through .csv file of loan eligibily please enter this information into a .csv file the same way that it is listed below with a header:
+*Note: If you decide to create a more through .csv file of loan eligibily please enter this information into a .csv file the same way that it is listed below with a header:*
 
-Lender Name, Max Loan Amount, Max LTV (Loan-to-Value), Max DTI (Debt-to-Income), Min Credit Score, Interest Rate*
+*Lender Name, Max Loan Amount, Max LTV (Loan-to-Value), Max DTI (Debt-to-Income), Min Credit Score, Interest Rate*
 
 ---
 
