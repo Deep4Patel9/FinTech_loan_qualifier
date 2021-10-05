@@ -5,8 +5,8 @@ This is a Python CLI(command-line interface) Application that allows the user to
 
 *Note: If you decide to create a more through .csv file of loan eligibily please enter this information into a .csv file the same way that it is listed below with a header:
 
-Lender Name, Max Loan Amount, Max LTV (Loan-to-Value), Max DTI (Debt-to-Income), Min Credit Score, Interest Rate
-*
+Lender Name, Max Loan Amount, Max LTV (Loan-to-Value), Max DTI (Debt-to-Income), Min Credit Score, Interest Rate*
+
 ---
 
 ## Technologies
