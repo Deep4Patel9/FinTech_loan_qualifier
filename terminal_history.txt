@@ -1,0 +1,50 @@
+   65  git status
+   66  git add ../README.md 
+   67  git push
+   68  git status
+   69  cd ..
+   70  ls
+   71  git pull
+   72  ls
+   73  git status
+   74  git push
+   75  git push --help
+   76  git status
+   77  git del README.md
+   78  git rm README.md
+   79  cd loan_qualifier_app/
+   80  ls
+   81  git add README.md 
+   82  git status
+   83  git pull
+   84  git status
+   85  git push
+   86  git pull
+   87  git pull
+   88  git push
+   89  git pull
+   90  git reset <Edited README.MD> --hard
+   91  git reset e6fe95004cb6329cb905bd652bbfdc94826e3547 --hard
+   92  git status
+   93  git pull
+   94  ls
+   95  cd ..
+   96  ls
+   97  git status
+   98  git rm loan_qualifier_app/README.md
+   99  git add README.md 
+  100  git status
+  101  git push
+  102  ls
+  103  git status
+  104  git pull
+  105  git status
+  106  cd loan_qualifier_app/
+  107  ls
+  108  git push
+  109  git pull
+  110  cd ..
+  111  git pull
+  112  git statys
+  113  git status
+  114  history 50 > terminal_history.txt
