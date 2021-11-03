@@ -11,7 +11,7 @@ import fire
 import questionary
 from pathlib import Path
 
-from qualifier.utils.fileio import load_csv, save_csv
+from qualifier.utils.fileio import (load_csv, save_csv, save_path_function)
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -113,7 +113,7 @@ def save_qualifying_loans(qualifying_loans):
     """
     # set header values
     header = ['Lender', 'Max Loan Amount', 'Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate']
-    # ask user if they want to save the results if they exist ig not notify user and exit
+    #ask user if they want to save the results if they exist if not notify user and exit
     if len(qualifying_loans) > 0:
         save_result = questionary.confirm("Would you like to save the results to a csv file?").ask()
 
@@ -124,19 +124,19 @@ def save_qualifying_loans(qualifying_loans):
             # check if file path exists
             if Path(save_path).is_dir():
                 file_name = questionary.text("Please specify what you would like to name this file.").ask()
-                save_path = Path(save_path, file_name+'.csv')
+                save_path = Path(save_path, file_name)
                 
                 #call save_csv(path, data, header(optional))
                 save_csv(save_path, qualifying_loans, header)
 
             else:
-                print(f"Oops! Can't find this path: {save_path}")
+                print(f"Oops! Can't find this directory: {save_path}")
 
         else:
             print("You have chosen not to save the results.")
 
     else:
-        print("No qualifying loans exist.")
+        sys.exit("No qualifying loans exist.")
 
 
 def run():
